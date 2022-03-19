@@ -16,5 +16,21 @@ Será uma jornada desafiante, mas irei me esforçar para escrever aqui todos os 
 ---
 ## Links
 
+[FreeCodeCamp Python Microservices Web App](https://www.youtube.com/watch?v=0iB5IPoTDts&list=PLNDjjx_fFhB30BPFWNqsLebpw4iveqjCH)
+
 ---
-## 
+### Dia 1
+- Estou seguindo o tutorial disponibilizado pelo freeCodeCamp para entender a estrutura de microserviço.\
+Passos iniciais no terminal:
+```shell
+$ python3 -m venv ./venv 
+$ source venv/bin/activate
+$ pip install django
+$ pip install djangorestframework
+```
+Hoje criei o ambiente virtual para instalar as dependências do projeto e, também, o projeto do django:
+```shell
+$ django-admin startproject admin .
+$ python manage.py runserver
+```
+<!--  https://youtu.be/0iB5IPoTDts?list=PLNDjjx_fFhB30BPFWNqsLebpw4iveqjCH&t=439 -->
