@@ -5,11 +5,12 @@
 Neste repositório estarei postando diariamente, durante 100 dias, minha jornada de aprendizado nas áreas de Backend e Ciência de dados. Busco com esse projeto aprender a construir uma arquitetura de microserviço e a desenvolver uma aplicação, utilizando ciência de dados. 
 
 Ferramentas que tenho o objetivo de aprender nessa jornada:
-- Docker;
+- Docker; 
 - Django;✅ 
 - Django REST framework;✅ 
 - PostgreSQL;✅
-- 
+- Celery;
+- RabbitMQ;
 - Flask;
 - React;
 - Elasticsearch;
@@ -24,7 +25,9 @@ Será uma jornada desafiante, mas irei me esforçar para escrever aqui todos os 
 #### [2][Docker Documentation - Orientation and setup](https://docs.docker.com/get-started/)
 #### [3][How To Use PostgreSQL with your Django](https://www.digitalocean.com/community/tutorials/how-to-use-postgresql-with-your-django-application-on-ubuntu-14-04)
 #### [4][Redis, Kafka or RabbitMQ: Which MicroServices Message Broker To Choose?](https://otonomo.io/redis-kafka-or-rabbitmq-which-microservices-message-broker-to-choose/)
+#### [5][Deploy on Kubernetes](https://docs.docker.com/desktop/kubernetes/)
 
+#### [6][How to Use Celery and RabbitMQ with Django](https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html)
 ---
 <details>
 <summary> Tarefas realizadas por dia</summary>
@@ -118,4 +121,34 @@ MIDDLEWARE = [
 ### Dia 5
 Instalar o [celery + rabbitmq](https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html)
 - Celery (Task Queue)
+
+Hoje achei outra ferramenta interessante que é o **Kubernetes**. Irei ler um pouco sobre ele e achei vídeos interessantes: [Deploy Django into Production with Kubernetes, Docker, & Github Actions](https://www.youtube.com/watch?v=NAOsLaB6Lfc), [you need to learn Kubernetes RIGHT NOW!!](https://www.youtube.com/watch?v=7bA0gTroJjw).
+- Kubernetes:
+  - Orquestrador de containers;
+  - Essa ferramenta permite criar várias instâncias de uma mesma imagem docker(container);
+  - Útil quando a página possui muitos acessos e se faz necessário balancear os acessos entre as intâncias de um mesmo docker container;
+  - Muitas ferramentas de cloud já possui a opção de se utilizar o Kubernetes;
+  - Por enquanto, não irei utilizar essa ferramenta.
+
+- Celery: 
+  - Fila de tarefas assíncronas, que possui como base o envio de mensagens distribuídas;
+  - Usada como estratégia para distribuir a carga de trabalho entre máquinas/threads.
+  - O RabbitMQ envia e manda mensagens de forma externa pro celery.
+
+Para instalar o celery e orabbitmq, foi utilizado este tutorial [[6]](#links).\
+Instalando o Celery:
+``` shell
+$ pip install Celery
+```
+
+Intalando RabbitMQ:
+```shell
+$ sudo apt-get install -y erlang
+$ sudo apt-get install rabbitmq-server
+```
+
+### Dia 6
+- Confiurar o docker [compose](admin/docker-compose.yml).
+### Dia 7
+
 </details>

@@ -2,3 +2,5 @@ Django==4.0.3
 djangorestframework==3.13.1
 psycopg2==2.9.3
 django-cors-headers==3.11.0
+celery==5.2.3
+pika==1.2.0

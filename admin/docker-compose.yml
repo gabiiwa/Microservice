@@ -1,0 +1,10 @@
+version: '3.8' 
+services:
+  backend:
+    build:
+      context: . #pasta atual
+      dockerfile: Dockerfile #especificando qual é dockerfile
+    ports:
+      - 8000:8000 #direita: porta especificada no Dockerfile e esquerda: localhost
+    volumes:
+      -.:/app # todos os arquivos dessa pasta devem estar no conjtainer app
