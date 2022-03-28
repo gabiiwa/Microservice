@@ -148,7 +148,19 @@ $ sudo apt-get install rabbitmq-server
 ```
 
 ### Dia 6
-- Confiurar o docker [compose](admin/docker-compose.yml).
-### Dia 7
+- Configurar o docker [compose](admin/docker-compose.yml).
+```shell
+$ sudo snap install docker
+$ docker-compose up #fazer o download dos requerimentos
+```
+<p>Apareceu um problema <code>PermissionError: [Errno 13] Permission denied</code>, isso ocorreu pois não tinha um soquete unix configurado. Para criar, achei essa alternativa no <a href="https://stackoverflow.com/questions/56784492/permissionerror-errno-13-permission-denied-manage-py">stackoverflow</a>.</p>
 
+```shell
+$ sudo chown $(whoami):$(whoami) /var/run/docker.sock
+```
+
+<p>Outro erro apareceu quando o comando <code>docker-compose up</code> foi utilizado: <code>python: can't open file '/app/manage.py': [Errno 2] No such file or directory</code>. Isso parece ocorrer pois 'volumes' do docker-compose não parece funcionar no ubuntu, pois não consegue montar o mesmo, de acordo com esse link no <a href="https://stackoverflow.com/questions/44694086/when-run-docker-compose-up-i-get-python-cant-open-file-manage-py-errno-2">stackoverflow</a>.<p>
+
+### Dia 7
+- Integração com banco de dados;
 </details>
