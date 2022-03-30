@@ -29,8 +29,8 @@ Será uma jornada desafiante, mas irei me esforçar para escrever aqui todos os 
 
 #### [6][How to Use Celery and RabbitMQ with Django](https://simpleisbetterthancomplex.com/tutorial/2017/08/20/how-to-use-celery-with-django.html)
 ---
-<details>
-<summary> Tarefas realizadas por dia</summary>
+<!-- <details>
+<summary> Tarefas realizadas por dia</summary> -->
 
 ### Dia 1
 - Estou seguindo o tutorial disponibilizado pelo freeCodeCamp [[1]](#links) para entender a estrutura de microserviço.\
