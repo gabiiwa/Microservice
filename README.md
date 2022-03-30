@@ -155,6 +155,7 @@ $ docker-compose up #fazer o download dos requerimentos
 ```
 <p>Apareceu um problema <code>PermissionError: [Errno 13] Permission denied</code>, isso ocorreu pois não tinha um soquete unix configurado. Para criar, achei essa alternativa no <a href="https://stackoverflow.com/questions/56784492/permissionerror-errno-13-permission-denied-manage-py">stackoverflow</a>.</p>
 
+
 ```shell
 $ sudo chown $(whoami):$(whoami) /var/run/docker.sock
 ```
@@ -163,4 +164,24 @@ $ sudo chown $(whoami):$(whoami) /var/run/docker.sock
 
 ### Dia 7
 - Integração com banco de dados;
+- Consfigurando banco de dados em docker-compose, utilizando a [documentação](https://docs.docker.com/samples/django/):
+
+```python
+db:
+    image: postgres
+    volumes:
+      - .dbdata:/var/lib/postgresql
+    environment:
+      - POSTGRES_NAME=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+```
+
+- Criando um app:
+
+```python
+$ docker-compose exec backend sh
+# python manage.py startapp products
+```
+
 </details>

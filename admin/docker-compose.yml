@@ -1,4 +1,4 @@
-version: '3.8' 
+version: '3.9' 
 services:
   backend:
     build:
@@ -9,3 +9,16 @@ services:
       - 8000:8000 #direita: porta especificada no Dockerfile e esquerda: localhost
     volumes:
       - .:\app # todos os arquivos dessa pasta devem estar no conjtainer app
+    depends_on:
+      - db
+  db:
+    image: postgres
+    restart: always
+    environment:
+      - POSTGRES_NAME=admin
+      - POSTGRES_USER=adminuser
+      - POSTGRES_PASSWORD=botafogoGP28
+    volumes:
+      # -  ./data/db:/var/lib/postgresql/data
+      - .dbdata:/var/lib/postgresql
+  
